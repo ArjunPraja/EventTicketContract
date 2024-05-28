@@ -1,28 +1,41 @@
-REMIX DEFAULT WORKSPACE
+ # EventTicket Contract
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+Welcome to the EventTicket Contract repository! This repository contains a simple Solidity smart contract for managing event ticket sales on the Ethereum blockchain.
 
-This workspace contains 3 directories:
+## Table of Contents
+- [Introduction](#introduction)
+- [Contract Details](#contract-details)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+## Introduction
+The EventTicket Contract is a basic smart contract written in Solidity. It allows participants to buy tickets for an event and tracks the total revenue generated from ticket sales.
 
-SCRIPTS
+## Contract Details
+The EventTicket contract includes the following features:
+- **Buy Tickets**: Participants can buy tickets by providing a value which increments the total number of tickets sold and the total revenue.
+- **Get Total Revenue**: Anyone can query the total revenue generated from ticket sales.
+- **Event Time Range**: The contract specifies the start and end times of the event.
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+### Contract Variables
+- `numberOfTicket`: The total number of tickets sold.
+- `ticketPrice`: The price of a single ticket.
+- `totalPrice`: The total revenue generated from ticket sales.
+- `startAt`: The start time of the event (timestamp).
+- `endAt`: The end time of the event (timestamp).
+- `timeRange`: The duration of the event in days.
+- `message`: A message displayed to users ("Buy Your First Ticket").
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+### Contract Functions
+- `constructor(uint _ticketPrice)`: Initializes the contract with a specified ticket price and sets the event start and end times.
+- `buyTicket(uint _value) public returns(uint ticketId)`: Allows a participant to buy a ticket by providing a value. Returns a ticket ID.
+- `getAmount() public view returns(uint)`: Returns the total revenue generated from ticket sales.
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
-
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
-
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+- **Node.js** and **npm**: Node.js is required to run scripts and interact with the contract. You can download Node.js and npm [here](https://nodejs.org/).
+- **Truffle**: A development framework for Ethereum. Install it globally using npm:
+  ```sh
+  npm install -g truffle
