@@ -1,4 +1,4 @@
- # EventTicket Contract
+# EventTicket Contract
 
 Welcome to the EventTicket Contract repository! This repository contains a simple Solidity smart contract for managing event ticket sales on the Ethereum blockchain.
 
@@ -14,10 +14,10 @@ Welcome to the EventTicket Contract repository! This repository contains a simpl
 The EventTicket Contract is a basic smart contract written in Solidity. It allows participants to buy tickets for an event and tracks the total revenue generated from ticket sales.
 
 ## Contract Details
-The EventTicket contract includes the following features:
-- **Buy Tickets**: Participants can buy tickets by providing a value which increments the total number of tickets sold and the total revenue.
-- **Get Total Revenue**: Anyone can query the total revenue generated from ticket sales.
-- **Event Time Range**: The contract specifies the start and end times of the event.
+The contract includes the following features:
+- **Buy Tickets**: Participants can buy tickets, which increments the total number of tickets sold and total revenue.
+- **Get Total Revenue**: Query the total revenue generated from ticket sales.
+- **Event Time Range**: Specifies the start and end times of the event.
 
 ### Contract Variables
 - `numberOfTicket`: The total number of tickets sold.
@@ -34,8 +34,8 @@ The EventTicket contract includes the following features:
 - `getAmount() public view returns(uint)`: Returns the total revenue generated from ticket sales.
 
 ## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- **Node.js** and **npm**: Node.js is required to run scripts and interact with the contract. You can download Node.js and npm [here](https://nodejs.org/).
-- **Truffle**: A development framework for Ethereum. Install it globally using npm:
+Ensure you have the following installed:
+- **Node.js** and **npm**: [Download Node.js and npm](https://nodejs.org/)
+- **Truffle**: Install globally using npm:
   ```sh
   npm install -g truffle
